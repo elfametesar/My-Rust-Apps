@@ -146,7 +146,6 @@ fn main() {
             "-w"|"--word" => {
                 data = get_data(&args, data, index);
                 sort_word(data, reverse);
-//                 print!("{}", data.join(" "));
                 return
             },
             _ => {
@@ -156,7 +155,4 @@ fn main() {
             },
         }
     }
-//     let rev = true;
-//     let args = sort_numbers(&args, rev);
-//     let text = fs::read_to_string(test).unwrap();
 }
