@@ -2,14 +2,11 @@ use std::env;
 
 fn human(mut size: f64) {
     for unit in [' ', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y' ] {
-        if size < 1024_f64 {
-            let result = format!("{:.2}", size);
-            if result.ends_with("00") { 
-                println!("{}{}", &result[..result.len()-3], unit)
-            } else { println!("{}{}", &result[..result.len()-1], unit) } 
-            return
+        if size < 1024.0 {
+            println!("{}{}", size, unit);
+            return;
         }
-        size = size/1024_f64;
+        size = (size / 1024.0 * 10.0).trunc() / 10.0;
    }
 }
 
